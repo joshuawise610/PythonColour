@@ -28,6 +28,7 @@ Only the following colours can for printing as coloured text, they are:
 * Light cyan
 * Black
 * White
+
 You can set the shade of colour to one of:
 * Bright
 * Normal
