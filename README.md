@@ -15,7 +15,7 @@ text being printed on a white background.
 # 3. What colours are available?
 Only the following colours can for printing as coloured text, they are:
 * Red
-* light red
+* Light red
 * Magenta
 * Light magenta
 * Yellow
@@ -32,4 +32,4 @@ Only the following colours can for printing as coloured text, they are:
 You can set the shade of colour to one of:
 * Bright
 * Normal
-* dim
+* Dim
