@@ -1,17 +1,34 @@
 # 1. Introduction
-This script can be installed to allow the standard python shell to print in coloured text to cmd or another shell which is able to
-support coloured text in the terminal window. It acts as a wrapper for the colorama module.
+This script can be installed to allow the standard python shell to print in coloured text to cmd or another shell which
+is able to support coloured text in the terminal window. It acts as a wrapper for the colorama module.
 
-# 2. How does it work?
-The printcol function is imported automatically when the python interpreter is run by the means of adding an import statement to
-the user script which is run when python is started. This may not work when the user is writing scripts to run not in the
-interactive window.
+# 2. What functions are available?
+* printcol - Takes a string, foreground colour, background colour and brightness. The string is then printed using the
+colours specified to the shell.
+* printcollist - Takes a list of items, foreground colours, background colours and brightness levels and prints the text
+as specified in each list
+* inputcolour - Creates an input prompt for users which features different styling options for the user prompt and the
+text being entered by the user.
+* testcolour - Print a sting using each foreground colour and each brightness level on a black background apart from black
+text being printed on a white background.
 
-# 3. What functions are added?
-Only one function is added to python when run called 'printcol' it takes a argument to print to the screen like print then the
-foreground colour, the background colour and the shade to use.
-
-# 4. What colours are avilable?
-printcol can only use the following colours for printing as coloured text, they are:
-Red, light red, magenta, light magenta, yellow, light yellow, green, light green, blue, light blue, cyan, light cyan, black and white.
-You can set the shade of colour to one of: bright, normal or dim.
+# 3. What colours are available?
+Only the following colours can for printing as coloured text, they are:
+* Red
+* light red
+* Magenta
+* Light magenta
+* Yellow
+* Light yellow
+* Green
+* Light green
+* Blue
+* Light blue
+* Cyan
+* Light cyan
+* Black
+* White
+You can set the shade of colour to one of:
+* Bright
+* Normal
+* dim
