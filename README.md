@@ -35,4 +35,5 @@ You can set the shade of colour to one of:
 * Dim
 
 # 5. Example
-The code 'printcol("Hello world", fore_col="red", back_col="black", shade="normal", end="\n")' produces the following output.
+The code `printcol("Hello world", fore_col="red", back_col="black", shade="normal", end="\n")` produces the following output.
+![Red text example](https://github.com/joshuawise610/PythonColour/raw/master/docs/image%20captures/example%20hello%20world.jpg)
