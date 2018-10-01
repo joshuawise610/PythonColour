@@ -4,18 +4,30 @@ is able to support coloured text in the terminal window. It acts as a wrapper fo
 
 # 2. What functions are available?
 * printcol(text, fore_col=None, back_col=None, shade=None, end=None)
+
 Prints a single line of text to the screen using the given fore_col and back_col colours. shade specifies to use a light or dark colour and end specifies which character to end the line on.
+
 text - The string to print.
+
 fore_col - A string containing a colour to use as the font colour.
+
 back_col - A string containing a colour to use as the background colour.
+
 shade - A string to decide to use a bright colour or dark colour.
+
 end - A string to determine if the next print statement will be displayed on a new line.
 * printcollist(list_to_print, fore_col=None, back_col=None, shade=None, end=None)
+
 Prints out each of the elements of the list using the colours specified at the same index in the other lists.
+
 list_to_print - The name of an iterable which can be printed out.
+
 fore_col - A list of foregound colours to use to print out each line of text.
+
 back_col - A list of background colours to print each line onto.
+
 shade - A list specifing the brightness of each line of text.
+
 end - Decides if the text should be printed as one long line or should be split up into individual lines.
 * inputcolour - Creates an input prompt for users which features different styling options for the user prompt and the
 text being entered by the user.
