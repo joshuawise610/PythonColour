@@ -175,6 +175,8 @@ def inputcolour(text, prompt_fore_col=None, prompt_back_col=None, prompt_shade=N
     
     # Define values for each style and colour
     shades = {"dim": Style.DIM, "bright": Style.BRIGHT, "normal": Style.NORMAL}  # When underline is available add Style.UNDERLINED
+    fore_cols = {"red": Fore.RED, "light red": Fore.LIGHTRED_EX, "magenta": Fore.MAGENTA, "light magenta": Fore.LIGHTMAGENTA_EX, "yellow": Fore.YELLOW, "light yellow": Fore.LIGHTYELLOW_EX, "green": Fore.GREEN, "light green": Fore.LIGHTGREEN_EX, "blue": Fore.BLUE, "light blue": Fore.LIGHTBLUE_EX, "cyan": Fore.CYAN, "light cyan": Fore.LIGHTCYAN_EX, "black": Fore.BLACK}
+    back_cols = {"red": Back.RED, "light red": Back.LIGHTRED_EX, "magenta": Back.MAGENTA, "light magenta": Back.LIGHTMAGENTA_EX, "yellow": Back.YELLOW, "light yellow": Back.LIGHTYELLOW_EX, "green": Back.GREEN, "light green": Back.LIGHTGREEN_EX, "blue": Back.BLUE, "light blue": Back.LIGHTBLUE_EX, "cyan": Back.CYAN, "light cyan": Back.LIGHTCYAN_EX, "white": Back.WHITE}
     
     # Check which shade of colour to use for the input prompt and the user input.
     if prompt_shade in shades:
