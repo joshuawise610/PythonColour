@@ -172,25 +172,21 @@ def inputcolour(text, prompt_fore_col=None, prompt_back_col=None, prompt_shade=N
         strip = None
 
     init(autoreset=False, convert=convert, strip=strip)  # Disable autoreset to colour the prompt correctly
-    # Check the shade, can be one of three options
-    if prompt_shade == "dim":
-        prompt_shade = Style.DIM
-    elif prompt_shade == "bright":
-        prompt_shade = Style.BRIGHT
-    # For when underline available
-    # elif prompt_shade == "underline":
-    #    prompt_shade = Style.UNDERLINED
-    else:  # If normal or other input
+    
+    # Define values for each style and colour
+    shades = {"dim": Style.DIM, "bright": Style.BRIGHT, "normal": Style.NORMAL}  # When underline is available add Style.UNDERLINED
+    
+    # Check which shade of colour to use for the input prompt and the user input.
+    if prompt_shade in shades:
+        prompt_shade = shades[prompt_shade]
+    else:
         prompt_shade = Style.NORMAL
-    if input_shade == "dim":
-        input_shade = Style.DIM
-    elif input_shade == "bright":
-        input_shade = Style.BRIGHT
-    # For when underline available
-    # elif prompt_shade == "underline":
-    #    prompt_shade = Style.UNDERLINED
-    else:  # If normal or other input
+    
+    if input_shade in shades:
+        input_shade = shades[input_shade]
+    else:
         input_shade = Style.NORMAL
+    
 
     # Begin checking the colour required
     if prompt_fore_col == "red":
