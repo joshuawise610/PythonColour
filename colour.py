@@ -189,149 +189,26 @@ def inputcolour(text, prompt_fore_col=None, prompt_back_col=None, prompt_shade=N
     else:
         input_shade = Style.NORMAL
     
-
-    # Begin checking the colour required
-    if prompt_fore_col == "red":
-        prompt_fore_col = Fore.RED
-    elif prompt_fore_col == "light red":  # Same as Style.BRIGHT
-        prompt_fore_col = Fore.LIGHTRED_EX
-
-    elif prompt_fore_col == "magenta":
-        prompt_fore_col = Fore.MAGENTA
-    elif prompt_fore_col == "light magenta":
-        prompt_fore_col = Fore.LIGHTMAGENTA_EX
-
-    elif prompt_fore_col == "yellow":
-        prompt_fore_col = Fore.YELLOW
-    elif prompt_fore_col == "light yellow":
-        prompt_fore_col = Fore.LIGHTYELLOW_EX
-
-    elif prompt_fore_col == "green":
-        prompt_fore_col = Fore.GREEN
-    elif prompt_fore_col == "light green":
-        prompt_fore_col = Fore.LIGHTGREEN_EX
-
-    elif prompt_fore_col == "blue":
-        prompt_fore_col = Fore.BLUE
-    elif prompt_fore_col == "light blue":
-        prompt_fore_col = Fore.LIGHTBLUE_EX
-
-    elif prompt_fore_col == "cyan":
-        prompt_fore_col = Fore.CYAN
-    elif prompt_fore_col == "light cyan":
-        prompt_fore_col = Fore.LIGHTCYAN_EX
-
-    elif prompt_fore_col == "black":
-        prompt_fore_col = Fore.BLACK
-    else:  # If white or other to prevent errors
+    # Check each foreground colour to use
+    if prompt_fore_col in fore_cols:
+        prompt_fore_col = fore_cols[prompt_fore_col]
+    else:
         prompt_fore_col = Fore.WHITE
-
-    # Then check the background colour required
-    if prompt_back_col == "red":
-        prompt_back_col = Back.RED
-    elif prompt_back_col == "light red":
-        prompt_back_col = Back.LIGHTRED_EX
-
-    elif prompt_back_col == "magenta":
-        prompt_back_col = Back.MAGENTA
-    elif prompt_back_col == "light magenta":
-        prompt_back_col = Back.LIGHTMAGENTA_EX
-
-    elif prompt_back_col == "yellow":
-        prompt_back_col = Back.YELLOW
-    elif prompt_back_col == "light yellow":
-        prompt_back_col = Back.LIGHTYELLOW_EX
-
-    elif prompt_back_col == "green":
-        prompt_back_col = Back.GREEN
-    elif prompt_back_col == "light green":
-        prompt_back_col = Back.LIGHTGREEN_EX
-
-    elif prompt_back_col == "blue":
-        prompt_back_col = Back.BLUE
-    elif prompt_back_col == "light blue":
-        prompt_back_col = Back.LIGHTBLUE_EX
-
-    elif prompt_back_col == "cyan":
-        prompt_back_col = Back.CYAN
-    elif prompt_back_col == "light cyan":
-        prompt_back_col = Back.LIGHTCYAN_EX
-
-    elif prompt_back_col == "white":  # White only comes in one shade
-        prompt_back_col = Back.WHITE
-    else:  # If black or other to prevent errors
-        prompt_back_col = Back.BLACK
-
-    # Check the input text fore colour
-    if input_fore_col == "red":
-        input_fore_col = Fore.RED
-    elif input_fore_col == "light red":  # Same as Style.BRIGHT
-        input_fore_col = Fore.LIGHTRED_EX
-
-    elif input_fore_col == "magenta":
-        input_fore_col = Fore.MAGENTA
-    elif input_fore_col == "light magenta":
-        input_fore_col = Fore.LIGHTMAGENTA_EX
-
-    elif input_fore_col == "yellow":
-        input_fore_col = Fore.YELLOW
-    elif input_fore_col == "light yellow":
-        input_fore_col = Fore.LIGHTYELLOW_EX
-
-    elif input_fore_col == "green":
-        input_fore_col = Fore.GREEN
-    elif input_fore_col == "light green":
-        input_fore_col = Fore.LIGHTGREEN_EX
-
-    elif input_fore_col == "blue":
-        input_fore_col = Fore.BLUE
-    elif prompt_fore_col == "light blue":
-        input_fore_col = Fore.LIGHTBLUE_EX
-
-    elif input_fore_col == "cyan":
-        input_fore_col = Fore.CYAN
-    elif input_fore_col == "light cyan":
-        input_fore_col = Fore.LIGHTCYAN_EX
-
-    elif input_fore_col == "black":
-        input_fore_col = Fore.BLACK
-    else:  # If white or other to prevent errors
+    
+    if input_fore_col in fore_cols:
+        input_fore_col = fore_cols[input_fore_col]
+    else:
         input_fore_col = Fore.WHITE
-
-    # Then check the input background colour required
-    if input_back_col == "red":
-        input_back_col = Back.RED
-    elif input_back_col == "light red":
-        input_back_col = Back.LIGHTRED_EX
-
-    elif input_back_col == "magenta":
-        input_back_col = Back.MAGENTA
-    elif input_back_col == "light magenta":
-        input_back_col = Back.LIGHTMAGENTA_EX
-
-    elif input_back_col == "yellow":
-        input_back_col = Back.YELLOW
-    elif input_back_col == "light yellow":
-        input_back_col = Back.LIGHTYELLOW_EX
-
-    elif input_back_col == "green":
-        input_back_col = Back.GREEN
-    elif input_back_col == "light green":
-        input_back_col = Back.LIGHTGREEN_EX
-
-    elif input_back_col == "blue":
-        input_back_col = Back.BLUE
-    elif input_back_col == "light blue":
-        input_back_col = Back.LIGHTBLUE_EX
-
-    elif input_back_col == "cyan":
-        input_back_col = Back.CYAN
-    elif input_back_col == "light cyan":
-        input_back_col = Back.LIGHTCYAN_EX
-
-    elif input_back_col == "white":  # White only comes in one shade
-        input_back_col = Back.WHITE
-    else:  # If black or other to prevent errors
+    
+    # Check each background colour to use
+    if prompt_back_col in back_cols:
+        prompt_back_col = back_cols[prompt_back_col]
+    else:
+        prompt_back_col = Back.BLACK
+    
+    if input_back_col in back_cols:
+        input_back_col = back_cols[input_back_col]
+    else:
         input_back_col = Back.BLACK
 
     print(prompt_shade + prompt_fore_col + prompt_back_col, end='')
