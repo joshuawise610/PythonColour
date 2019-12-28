@@ -59,87 +59,27 @@ def printcol(text, fore_col=None, back_col=None, shade=None, end=None):
         strip = None
 
     init(autoreset=True, convert=convert, strip=strip)  # Make sure the next print statement runs correctly
-    # Check the shade, can be one of three options
-    if shade == "dim":
-        shade = Style.DIM
-    elif shade == "bright":
-        shade = Style.BRIGHT
-    # For when underline available
-    # elif shade == "underline":
-    #    shade = Style.UNDERLINED
-    else:  # If normal or other input
+    # Define values for each style and colour
+    shades = {"dim": Style.DIM, "bright": Style.BRIGHT, "normal": Style.NORMAL}  # When underline is available add Style.UNDERLINED
+    fore_cols = {"red": Fore.RED, "light red": Fore.LIGHTRED_EX, "magenta": Fore.MAGENTA, "light magenta": Fore.LIGHTMAGENTA_EX, "yellow": Fore.YELLOW, "light yellow": Fore.LIGHTYELLOW_EX, "green": Fore.GREEN, "light green": Fore.LIGHTGREEN_EX, "blue": Fore.BLUE, "light blue": Fore.LIGHTBLUE_EX, "cyan": Fore.CYAN, "light cyan": Fore.LIGHTCYAN_EX, "black": Fore.BLACK}
+    back_cols = {"red": Back.RED, "light red": Back.LIGHTRED_EX, "magenta": Back.MAGENTA, "light magenta": Back.LIGHTMAGENTA_EX, "yellow": Back.YELLOW, "light yellow": Back.LIGHTYELLOW_EX, "green": Back.GREEN, "light green": Back.LIGHTGREEN_EX, "blue": Back.BLUE, "light blue": Back.LIGHTBLUE_EX, "cyan": Back.CYAN, "light cyan": Back.LIGHTCYAN_EX, "white": Back.WHITE}
+    
+    # Check the shade of colour to use
+    if shade in shades:
+        shade = shades[shade]
+    else:
         shade = Style.NORMAL
-
-    # Begin checking the colour required
-    if fore_col == "red":
-        fore_col = Fore.RED
-    elif fore_col == "light red" or fore_col == "bright red":  # Same as Style.BRIGHT
-        fore_col = Fore.LIGHTRED_EX
-
-    elif fore_col == "magenta":
-        fore_col = Fore.MAGENTA
-    elif fore_col == "light magenta" or fore_col == "bright magenta":
-        fore_col = Fore.LIGHTMAGENTA_EX
-
-    elif fore_col == "yellow":
-        fore_col = Fore.YELLOW
-    elif fore_col == "light yellow" or fore_col == "bright yellow":
-        fore_col = Fore.LIGHTYELLOW_EX
-
-    elif fore_col == "green":
-        fore_col = Fore.GREEN
-    elif fore_col == "light green" or fore_col == "bright green":
-        fore_col = Fore.LIGHTGREEN_EX
-
-    elif fore_col == "blue":
-        fore_col = Fore.BLUE
-    elif fore_col == "light blue" or fore_col == "bright blue":
-        fore_col = Fore.LIGHTBLUE_EX
-
-    elif fore_col == "cyan":
-        fore_col = Fore.CYAN
-    elif fore_col == "light cyan" or fore_col == "bright cyan":
-        fore_col = Fore.LIGHTCYAN_EX
-
-    elif fore_col == "black":
-        fore_col = Fore.BLACK
-    else:  # If white or other to prevent errors
+    
+    # Check the foreground colour to use
+    if fore_col in fore_cols:
+        fore_col = fore_cols[fore_col]
+    else:
         fore_col = Fore.WHITE
-
-    # Then check the background colour required
-    if back_col == "red":
-        back_col = Back.RED
-    elif back_col == "light red" or back_col == "bright red":
-        back_col = Back.LIGHTRED_EX
-
-    elif back_col == "magenta":
-        back_col = Back.MAGENTA
-    elif back_col == "light magenta" or back_col == "bright magenta":
-        back_col = Back.LIGHTMAGENTA_EX
-
-    elif back_col == "yellow":
-        back_col = Back.YELLOW
-    elif back_col == "light yellow" or back_col == "bright yellow":
-        back_col = Back.LIGHTYELLOW_EX
-
-    elif back_col == "green":
-        back_col = Back.GREEN
-    elif back_col == "light green" or back_col == "bright green":
-        back_col = Back.LIGHTGREEN_EX
-
-    elif back_col == "blue":
-        back_col = Back.BLUE
-    elif back_col == "light blue" or back_col == "bright blue":
-        back_col = Back.LIGHTBLUE_EX
-
-    elif back_col == "cyan":
-        back_col = Back.CYAN
-    elif back_col == "light cyan" or back_col == "bright cyan":
-        back_col = Back.LIGHTCYAN_EX
-
-    elif back_col == "white":
-        back_col = Back.WHITE
-    else:  # If black or other to prevent errors
+    
+    # Check the background colour to use
+    if back_col in back_cols:
+        back_col = back_cols[back_col]
+    else:
         back_col = Back.BLACK
 
     # Then print the text to the screen
